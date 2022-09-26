@@ -86,13 +86,7 @@
        .donar b{
         margin: 20px 20px 20px 83px;
        }
-       .listedfood{
-        width:225px;
-        height: 90px;
-        float:left;
-        background-color: blueviolet;
-        margin:30px 30px ;
-       }
+       
             </style>
             </head>
 <body>

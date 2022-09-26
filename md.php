@@ -13,6 +13,27 @@ if (isset($_POST['btn']))
     {
         $amount = test($_POST["amount"]);
     }
+    if (empty($_POST["username"])) 
+    {
+        $usererr = "required";
+    } else
+    {
+        $username = test($_POST["username"]);
+    }
+    if (empty($_POST["address"])) 
+    {
+        $addresserr = "required";
+    } else
+    {
+        $address = test($_POST["address"]);
+    }
+    if (empty($_POST["number"])) 
+    {
+        $numbererr = "required";
+    } else
+    {
+        $number = test($_POST["number"]);
+    }
         if (empty($_POST["note"])) 
         {
             $noteerr = "";
@@ -20,11 +41,16 @@ if (isset($_POST['btn']))
         {
             $note = test($_POST["note"]);
         }
-        if(!empty($_POST["amount"]) && !empty($_POST["note"]))
+        if(!empty($_POST["amount"]) && !empty($_POST["note"]) && !empty($_POST["address"]) 
+        && !empty($_POST["number"]) && !empty($_POST["username"]))
 {
 $amount=$_POST['amount'];
 $note=$_POST['note'];
-$query = "INSERT INTO donate_money VALUES('', '$amount','$note')";
+$address=$_POST['address'];
+$number=$_POST['number'];
+$username=$_POST['username'];
+$query = "INSERT INTO donate_money VALUES('', '$username','$number
+','$address','$amount','$note',')";
 $results = mysqli_query($link, $query);
 if(mysqli_query($link,$query))
 {
@@ -75,8 +101,7 @@ function test($data)
             background-color: whitesmoke;
             background-image: url('images/mm.jpg');
         }
-
-        .demo 
+       .demo 
            {
             width: 960px;
             margin: 0 auto;
