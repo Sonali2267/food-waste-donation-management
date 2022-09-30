@@ -8,7 +8,7 @@ $dbname="foodwaste";
 
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 
-if(!$conn)
+if(!$con)
 {
     die("connection-failed:".mysqli_connect_error());
 }
